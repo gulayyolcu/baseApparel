@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/*variables*/
+:root{
+    --primary:hsl(0, 36%, 70%);
+    --secondary:hsl(0, 93%, 68%);
+    --third:hsl(0, 6%, 24%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*reset*/
+body,p,h2{
+   
+    margin:0px;
+    padding:0px;
+}
+
+/*base styles*/
+body{
+    overflow-x: hidden;
+    font-size:16px;
+    font-family: 'Josefin Sans',sans-serif;
+}
+
+.container{
+    font-size:16px;
+    font-family: 'Josefin Sans',sans-serif;
+}
+
+.email{
+    padding:15px 25px;
+    width:330px;
+    height:auto;
+    color:hsl(0, 93%, 68%);
+    font-weight: 700;
+    text-align: left;
+    border: 1px solid var(--secondary);
+    border-radius:25px;
+    font-size:16px;
+    font-family: 'Josefin Sans',sans-serif;
+    z-index:1;
+}
+
+input{
+    color:var(--secondary);
+}
+
+.imageButton{
+    padding:16px 40px;
+    background: linear-gradient(45deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 5px 5px 15px rgba(249,98,98,0.4);
+    border-radius: 25px;
+    position: relative;
+    left:-40px;
+    z-index:2;
+    &:hover{
+        box-shadow: 10px 10px 30px rgba(249,98,98,0.4);
+        cursor: pointer;
+    }
+}
+.formEl{
+    display:flex;
+    flex-direction: row;
+    align-items: center;  
+    justify-content: center;
+}
+.lightPink{
+    color:var(--primary);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size:2.5em;
+    letter-spacing: 4px;    
+}
+.darkGred{
+    color:var(--third);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size:2.5em;
+    letter-spacing: 4px;   
+    margin-bottom:0px;
+    
+}
+p{
+    color:var(--primary);
+    font-weight: 700;
+    line-height: 1.5em;;
+}
+
+.warning{
+    width:100%;
+    height:auto;
+    color:var(--secondary);
+    font-size:16px;
+    text-align: center;
+    padding-top:1em; 
+}
+
+
+
+/* mobile styles */
+
+.container{
+   
+    width:100%;
+    height: auto;
+    display:grid;
+    grid-template-columns: 1fr 0.2fr 1fr;
+    grid-row-gap:2em;
+    grid-template-areas: 
+        "logo logo logo"
+        "cover1 cover1 cover1"
+        "text1 text1 text1"
+        "form1 form1 form1"
+        "footer1 footer1 footer1";
+    box-sizing:border-box;
+    
+    
+    .logo{
+      
+        grid-area:logo;  
+        padding-bottom:0;
+        padding-top:2em; 
+        padding-right:2em;
+        padding-left:4em;
+   
+        
+    }
+    .coverGirl{
+    grid-area:cover1; 
+    box-sizing:border-box; 
+        img{
+            display:block;
+            width:100%;
+            height:auto;
+        }
+    }
+    .text{
+        grid-area:text1;
+        display:flex;
+        flex-direction: column;
+        padding:0.4em 2em;
+        text-align: center;
+    
+        .lightPink,.darkGred{
+          
+            font-size:2.5em;
+            line-height:1.25em;
+        }
+        .darkGred{
+            margin-bottom:1em;
+        }
+        p{
+            font-size:1.5em;
+           
+           
+        }
+
+    }
+    .formEl{
+        display:flex;
+        justify-content:center;
+        padding-left:2em;
+        
+    }
+    .formElement{
+        grid-area:form1;   
+        
+    }
+    footer{
+        grid-area:footer1;
+        padding-bottom:1em;
+      
+    }
+}
+
+@media(max-width:620px) and (min-width:541px){
+
+    .container{
+        
+        max-width:620px;
+        height:auto;
+        grid-column-gap:3em;
+        box-sizing:border-box;
+        grid-template-areas: 
+            "logo logo logo"
+            "cover1 cover1 cover1"
+            "text1 text1 text1"
+            "form1 form1 form1"
+            "footer1 footer1 footer1";
+
+         
+    } 
+    .coverGirl{
+        width:100%;
+        height:auto;
+    }
+    .coverGirl img{
+        display:block;
+        width:100%;
+        height:auto;
+    }
+    .formElement{
+        margin-left:3em;
+    }
+    .logo{
+        margin-left:-1em;
+    }
+
+    
+}
+
+
+@media(max-width:960px) and(min-width:621px){
+
+    .container{
+       
+        max-width:960px;
+        height:auto;
+      
+     
+        grid-column-gap:4em;;
+        grid-template-areas: 
+        "logo cover1 cover1"
+        "text1 cover1 cover1"
+        "text1 cover1 cover1"
+        "form1 cover1 cover1"
+        "footer1 cover1 cover1"; 
+        box-sizing:border-box;
+    }
+        /* .coverG img{
+          display:none;
+        } */
+       /*  .coverGirl::before{
+            width:100%;
+            height:auto;
+            margin-left:6em;
+            content:url('../images/hero-desktop.jpg');
+        } */
+       /*  .coverGirl img{
+            width:100%;
+            height:auto;
+            margin-left:6em;
+            content:url('../images/hero-desktop.jpg');
+        } */
+        .coverGirl img{
+            display:block;
+            width:100%;
+            height:auto;
+        }
+    
+    .logo{
+        margin-left:4em;
+        padding-top:3em;       
+    } 
+    
+    .text p{  
+        text-align: left;
+        margin-left:4em;
+    }
+    .text .darkGred{ 
+        text-align: left;
+        margin-left:2.5em;     
+    }
+    .text .lightPink{
+        text-align: left;
+        margin-left:2.5em;
+    }
+    .formElement{
+        margin-left:5em;
+    }
+    .coverGirl{
+        width:100%;
+        height:auto;
+    }
+  
+
+}
+
+@media(max-width:1440px) and(min-width:961px){
+
+    .container{
+        max-width: 1440px;
+      
+        grid-column-gap:4em;
+        height:auto;
+        grid-template-areas: 
+        "logo cover1 cover1"
+        "text1 cover1 cover1"
+        "text1 cover1 cover1"
+        "form1 cover1 cover1"
+        "footer1 cover1 cover1"; 
+        justify-self: flex-start;
+        box-sizing:border-box;
+    }
+    .logo{
+     
+        padding-top:3em;
+        margin-left:4em;
+    }
+    .coverGirl{
+        width:100%;
+        height:auto;
+    }
+    .coverGirl img{
+        display:block;
+        width:100%;
+        height:auto;
+    }
+
+   /* .coverG img{
+        display:none;
+      } */
+     /*  .coverGirl::before{
+          width:100%;
+          height:auto;
+          margin-left:6em;
+          content:url('../images/hero-desktop.jpg');
+      } */
+
+     /*  .coverGirl img{
+            width:100%;
+            height:auto;
+            margin-left:6em;
+            content:url('../images/hero-desktop.jpg');
+        } */
+  
+
+    .text p{
+      
+        text-align: left;
+        margin-left:4em;
+    
+    }
+    .text .darkGred{
+      
+        text-align: left;
+        margin-left:2.5em;
+        
+    }
+    .text .lightPink{
+    
+        text-align: left;
+        margin-left:2.5em;
+    }
+    .formElement{
+        margin-left:4em;
+    }
+} 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
